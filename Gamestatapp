@@ -1,0 +1,76 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int choice;
+    int level = 1;
+    int strength = 10, agility = 10, intelligence = 10;
+    bool created = false;
+
+    do {
+        cout << "\n=== GAMESTAT CHARACTER MANAGER ===\n";
+        cout << "1. Create New Character\n";
+        cout << "2. View Character Stats\n";
+        cout << "3. Calculate Combat Ratings\n";
+        cout << "4. Level Up Character\n";
+        cout << "5. Exit\n";
+        cout << "Enter choice: ";
+
+        // input validation
+        while (!(cin >> choice) || choice < 1 || choice > 5) {
+            cout << "Invalid choice. Try again: ";
+            cin.clear();
+            cin.ignore(1000, '\n');
+        }
+
+        switch (choice) {
+            case 1:
+                created = true;
+                level = 1;
+                strength = 10;
+                agility = 10;
+                intelligence = 10;
+                cout << "Character created!\n";
+                break;
+
+            case 2:
+                if (!created) {
+                    cout << "No character created yet.\n";
+                } else {
+                    cout << "Level: " << level << endl;
+                    cout << "Strength: " << strength << endl;
+                    cout << "Agility: " << agility << endl;
+                    cout << "Intelligence: " << intelligence << endl;
+                }
+                break;
+
+            case 3:
+                if (!created) {
+                    cout << "No character created yet.\n";
+                } else {
+                    int combatRating = strength + agility + intelligence;
+                    cout << "Combat Rating: " << combatRating << endl;
+                }
+                break;
+
+            case 4:
+                if (!created) {
+                    cout << "No character created yet.\n";
+                } else {
+                    level++;
+                    strength++;
+                    agility++;
+                    intelligence++;
+                    cout << "Character leveled up!\n";
+                }
+                break;
+
+            case 5:
+                cout << "Goodbye!\n";
+                break;
+        }
+
+    } while (choice != 5);
+
+    return 0;
+}
