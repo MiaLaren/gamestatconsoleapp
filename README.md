@@ -3,7 +3,7 @@ Console bassed RPG character statistics manager
 
 This program will allow the user to create characters, calculate combat stats, and navigate through a menu system.
 
-To run the program type: ./a.out into the terminal
+To run the program load into the gamestatapp file and type: ./a.out into the terminal
 
 No bonouses were added to the prgram.
 
