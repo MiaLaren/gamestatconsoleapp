@@ -1,7 +1,14 @@
+//*** 
+//Author*****:Mia Santos
+//Assignment*:GameStat Console App
+//Description:Console app will generate characters, caluculate combat stats, and navigate through a menu system.
+//***
+
+
 #include <iostream>
 using namespace std;
 
-// Constants
+// Constants for maximum stats
 const int MIN_STAT = 1;
 const int MAX_STAT = 20;
 const int MAX_LEVEL = 10;
@@ -36,7 +43,7 @@ int main() {
 
         switch (choice) {
 
-        case 1: // CREATE CHARACTER
+        case 1: // Create character
             cout << "Enter character name: ";
             cin >> name;
 
@@ -91,7 +98,7 @@ int main() {
             cout << "Character created successfully!\n";
             break;
 
-        case 2: // VIEW PROFILE
+        case 2: // View character profile
             if (!created) {
                 cout << "No character created yet.\n";
             } else {
@@ -149,7 +156,7 @@ int main() {
             }
             break;
 
-        case 3: // LEVEL UP
+        case 3: // Level up character
             if (!created) {
                 cout << "No character created yet.\n";
             }
